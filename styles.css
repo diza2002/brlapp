@@ -1,3 +1,14 @@
+:root
+{
+   --brl-border-radius-sm: 10px;
+   --brl-border-radius-md: 16px;
+   --brl-border-radius-large: 24px;
+   --brl-border-radius-xs: 6px;
+   --brl-input-border-width: 2px;
+   --brl-input-border-color: #D8D9DC;
+   --brl-input-padding: 14px 10px;
+}
+
 /* General code */
 .ov-hidden {overflow: hidden!important; }
 .ov-visible {overflow: visible!important; }
@@ -74,3 +85,51 @@ border-radius: 16px;
     .rt-item_card:hover:before, .rt-item_card:hover:after, .rt-item:hover .rt-item_element:after, .rt-item:hover .rt-item_element:before {
         opacity: 100%!important;
     }
+
+/* Inputs */
+
+  button, .clickable-element
+    {
+       -webkit-backface-visibility: hidden!important;
+       white-space: nowrap!important;
+       outline: none!important;
+    }
+
+    /* All inputs customization */
+
+    input:not(.cz-checkbox), textarea, select, .input, .select2-MultiDropdown
+    {
+       transition: 300ms ease all!important;
+        
+    }
+        
+    /* Input disabled status */
+    
+    input:disabled, textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder, select:disabled, .select2-MultiDropdown:disabled
+    {
+        opacity: 60%!important;
+       background-color: #ededed!important;
+    }
+
+.button:disabled
+{
+   opacity: 60%!important;
+}
+
+        input, textarea, select, .select2-MultiDropdown
+{
+   padding: var(--brl-input-padding)!important;
+   line-height: 1!important;
+   -webkit-backface-visibility: hidden!important;
+   border-width: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
+}
+        input:focus, textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
+    {
+       box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
+    } 
+
+textarea
+{
+   min-height: 120px;
+   line-height: 1.6!important;
+}
