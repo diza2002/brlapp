@@ -1,17 +1,76 @@
-.ov-hidden
-{
-  overflow: hidden!important;
-}
-.ov-visible
-{
-  overflow: visible!important;
-}
-.demo, div
-{
-  background: black!important;
-}
+/* General code */
+.ov-hidden {overflow: hidden!important; }
+.ov-visible {overflow: visible!important; }
+.grow-1 { flex-grow: 1!important; }
+.page { min-height: 100vh!important; }
+.page.fixed { height: 100vh!important; max-height: 100vh!important; }
+.content-scroll-pp { height: 0px!important; flex-grow: 1!important; overflow: auto!important; }
+.content-scroll-pp-row{ height: 100%!important; flex-grow: 1!important; overflow: auto!important;} .content-scroll-pp-fit{ height: 0px!important; flex-grow: 1!important;}
+.content-scroll-pp-fit-row{ height: 100%!important; flex-grow: 1!important; }
+
+/*Active and hover item*/
 
 body
 {
-  background: red!important;
+user-select: none; outline: none !important;
 }
+
+.rt-item_card
+{
+transition: 300ms ease all!important;
+}
+
+.rt-item_card:hover
+{
+opacity: 82%!important;
+}
+
+.rt-item--fancy
+{
+transition: 300ms ease all!important;
+}
+.rt-item--fancy:hover 
+{
+transform: scale(1.025)!important;
+}
+   
+.rt-item_element
+{
+border-radius: 20px!important;
+}
+    
+.rt-item_card:after, .rt-item_element:after
+{
+transition: 300ms ease all;
+opacity: 0%;
+content: '';
+box-shadow: 0px 0px 0px 2px white;
+width: 100%!important;
+height: 100%!important;
+position: absolute;
+top: 50%;
+    pointer-events: all!important;
+left: 50%;
+transform: translate(-50%,-50%);
+border-radius: 16px;
+}
+
+.rt-item_element:before, .rt-item_card:before
+{
+    transition: 300ms ease all;
+    opacity: 0%;
+    content: '';
+    box-shadow: 0px 0px 0px 4px #191D19;
+    width: 100%!important;
+    height: 100%!important;
+    position: absolute;
+    top: 50%;
+    pointer-events: all!important;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 16px;
+}
+    
+    .rt-item_card:hover:before, .rt-item_card:hover:after, .rt-item:hover .rt-item_element:after, .rt-item:hover .rt-item_element:before {
+        opacity: 100%!important;
+    }
