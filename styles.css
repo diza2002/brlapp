@@ -1,16 +1,37 @@
 :root
 {
    --brl-border-radius-sm: 10px;
+   --brl-border-radius-sm--md: 12px;
+   --brl-border-radius-sm--lg: 14px;
    --brl-border-radius-md: 16px;
-   --brl-border-radius-large: 24px;
+   --brl-border-radius-md--lg: 20px;
+   --brl-border-radius-lg: 24px;
    --brl-border-radius-xs: 6px;
    --brl-input-border-width: 2px;
    --brl-input-border-color: #D8D9DC;
    --brl-input-padding: 10px 14px;
    --brl-input-radius: 12px;
+   --brl-card-radius: 12px;
+   --brl-card-border-width: 1px;
+   --brl-card-border-color: #D8D9DC;
+   --pad-xs: 6px;
+   --pad-xs--xs: 4px;
+   --pad-sm: 10px;
+   --pad-sm--md: 12px;
+   --pad-sm--lg: 14px;
+   --pad-md: 16px;
+   --pad-md--lg: 20px;
+   --pad-lg: 24px
 }
 
 /* General code */
+.brl-card
+{
+   border-radius: var(--brl-card-radius)!important;
+   border-width: var(--brl-card-border-width)!important;
+   border-style: solid!important;
+   border-color: var(--brl-card-border-color)!important;
+}
 .ov-hidden {overflow: hidden!important; }
 .ov-visible {overflow: visible!important; }
 .grow-1 { flex-grow: 1!important; }
