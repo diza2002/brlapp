@@ -6,7 +6,8 @@
    --brl-border-radius-xs: 6px;
    --brl-input-border-width: 2px;
    --brl-input-border-color: #D8D9DC;
-   --brl-input-padding: 14px 10px;
+   --brl-input-padding: 10px 14px;
+   --brl-input-radius: 12px;
 }
 
 /* General code */
@@ -97,7 +98,7 @@ border-radius: 16px;
 
     /* All inputs customization */
 
-    input:not(.cz-checkbox), textarea, select, .input, .select2-MultiDropdown
+    input:not(.cz-checkbox), textarea, select, .input, .select2-MultiDropdown, button
     {
        transition: 300ms ease all!important;
         
@@ -116,17 +117,19 @@ border-radius: 16px;
    opacity: 60%!important;
 }
 
-        input, textarea, select, .select2-MultiDropdown
+input, textarea, select, .select2-MultiDropdown
 {
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
    -webkit-backface-visibility: hidden!important;
    border-width: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
+   border-radius: var(--brl-input-radius)!important;
+   min-width: 100%;
 }
-        input:focus, textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
-    {
-       box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
-    } 
+input:focus, textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
+{
+   box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
+} 
 
 textarea
 {
