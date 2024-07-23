@@ -143,7 +143,7 @@ input, textarea, select, .select2-MultiDropdown
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
    -webkit-backface-visibility: hidden!important;
-   border-width: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
+   border: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
    border-radius: var(--brl-input-radius)!important;
    min-width: 100%;
 }
