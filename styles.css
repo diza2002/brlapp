@@ -22,7 +22,9 @@
    --pad-sm--lg: 14px;
    --pad-md: 16px;
    --pad-md--lg: 20px;
-   --pad-lg: 24px
+   --pad-lg: 24px;
+	--brl-pp-header-bg: white;
+	--brl-pp-footer-bg: white;
 }
 
   .mandatory-text:after
@@ -56,6 +58,24 @@
 .content-scroll-pp-row{ height: 100%!important; flex-grow: 1!important; overflow: auto!important;}
 .content-scroll-pp-fit{ height: 0px!important; flex-grow: 1!important;}
 .content-scroll-pp-fit-row{ height: 100%!important; flex-grow: 1!important; }
+
+.pp-header
+{
+	position: sticky!important;
+	top: 0;
+	left: 0;
+	z-index: 100!important;
+	background: var(--brl-pp-header-bg)!important;
+}
+
+.pp-footer
+{
+	position: sticky!important;
+	bottom: 0;
+	left: 0;
+	z-index: 100!important;
+	background: var(--brl-pp-footer-bg)!important;
+}
 .pp-default-2
     {
         top: 0px!important;
