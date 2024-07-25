@@ -11,6 +11,7 @@
    --brl-input-border-color: #D8D9DC;
    --brl-input-padding: 10px 14px;
    --brl-input-radius: 12px;
+   --brl-input-size: 14px;
    --brl-card-radius: 12px;
    --brl-card-border-width: 1px;
    --brl-card-border-color: #D8D9DC;
@@ -34,12 +35,87 @@
 }
 .ov-hidden {overflow: hidden!important; }
 .ov-visible {overflow: visible!important; }
+.ov-auto { overflow: auto!important; }
+.nowrap { flex-wrap: nowrap!important; }
+.ellipsis
+{
+   white-space: nowrap!important;
+   text-overflow: ellipsis!important;
+   text-wrap: nowrap!important;
+   overflow: hidden!important;
+}
 .grow-1 { flex-grow: 1!important; }
 .page { min-height: 100vh!important; }
 .page.fixed { height: 100vh!important; max-height: 100vh!important; }
 .content-scroll-pp { height: 0px!important; flex-grow: 1!important; overflow: auto!important; }
-.content-scroll-pp-row{ height: 100%!important; flex-grow: 1!important; overflow: auto!important;} .content-scroll-pp-fit{ height: 0px!important; flex-grow: 1!important;}
+.content-scroll-pp-row{ height: 100%!important; flex-grow: 1!important; overflow: auto!important;}
+.content-scroll-pp-fit{ height: 0px!important; flex-grow: 1!important;}
 .content-scroll-pp-fit-row{ height: 100%!important; flex-grow: 1!important; }
+.pp-default
+    {
+        top: 0px!important;
+        bottom: 20px!important;
+        position: fixed!important;
+        max-height: 100vh!important;
+        margin-bottom: 0px!important;
+        margin-top: 20px!important;
+        
+    }
+
+@media (max-width: 768px)
+{
+.pp-default
+{
+width: 100%!important;
+bottom: 0!important;
+padding: 0!important;
+margin: 0!important;
+right: 0!important;
+}
+}
+
+.pp-centered
+{
+position: fixed!important;
+top: 50%!important;
+transform: translateY(-50%)!important;
+max-height: 100vh!important;
+overflow-y: auto!important;
+}
+
+.TableCell
+{
+padding: var(--brl-table-padding);
+gap: var(--brl-table-gap);
+}
+
+.TableCrossAxis
+{
+background-color: var(--brl-table-top-bg-color);
+}
+
+@media (max-width: 992px)
+{
+.tb-column
+{
+flex-direction: column!important;
+}
+
+.tb-column_item
+{
+min-width: 100%!important;
+}
+
+.tb-btn
+{
+min-width: 100%!important;
+}
+
+.tb-btn-2
+{
+flex-grow: 1!important;
+}
+
 
 /*Active and hover item*/
 
@@ -48,31 +124,31 @@ body
 user-select: none; outline: none !important;
 }
 
-.rt-item_card
+.brl-item_card
 {
 transition: 300ms ease all!important;
 }
 
-.rt-item_card:hover
+.brl-item_card:hover
 {
 opacity: 82%!important;
 }
 
-.rt-item--fancy
+.brl-item--fancy
 {
 transition: 300ms ease all!important;
 }
-.rt-item--fancy:hover 
+.brl-item--fancy:hover 
 {
 transform: scale(1.025)!important;
 }
    
-.rt-item_element
+.brl-item_element
 {
 border-radius: 20px!important;
 }
     
-.rt-item_card:after, .rt-item_element:after
+.brl-item_card:after, .brl-item_element:after
 {
 transition: 300ms ease all;
 opacity: 0%;
@@ -88,7 +164,7 @@ transform: translate(-50%,-50%);
 border-radius: 16px;
 }
 
-.rt-item_element:before, .rt-item_card:before
+.brl-item_element:before, .brl-item_card:before
 {
     transition: 300ms ease all;
     opacity: 0%;
@@ -104,7 +180,7 @@ border-radius: 16px;
     border-radius: 16px;
 }
     
-    .rt-item_card:hover:before, .rt-item_card:hover:after, .rt-item:hover .rt-item_element:after, .rt-item:hover .rt-item_element:before {
+    .brl-item_card:hover:before, .brl-item_card:hover:after, .brl-item:hover .brl-item_element:after, .brl-item:hover .brl-item_element:before {
         opacity: 100%!important;
     }
 
@@ -119,7 +195,7 @@ border-radius: 16px;
 
     /* All inputs customization */
 
-    input:not(.cz-checkbox), textarea, select, .input, .select2-MultiDropdown, button
+    input:not(.cz-checkbox, .cz-switch), textarea, select, .input, .select2-MultiDropdown, button
     {
        transition: 300ms ease all!important;
         
@@ -138,7 +214,7 @@ border-radius: 16px;
    opacity: 60%!important;
 }
 
-input, textarea, select, .select2-MultiDropdown
+input:not(.cz-checkbox, .cz-switch), textarea, select, .select2-MultiDropdown
 {
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
@@ -146,8 +222,10 @@ input, textarea, select, .select2-MultiDropdown
    border: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
    border-radius: var(--brl-input-radius)!important;
    min-width: 100%;
+   font-size: var(--brl-input-size)!important;
 }
-input:focus, textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
+
+input:not(.cz-checkbox, .cz-switch), textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
 {
    box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
 } 
