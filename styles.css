@@ -25,6 +25,11 @@
    --pad-lg: 24px
 }
 
+  .mandatory-text:after
+    {
+        content: " *"
+    }
+
 /* General code */
 .brl-card
 {
@@ -51,7 +56,7 @@
 .content-scroll-pp-row{ height: 100%!important; flex-grow: 1!important; overflow: auto!important;}
 .content-scroll-pp-fit{ height: 0px!important; flex-grow: 1!important;}
 .content-scroll-pp-fit-row{ height: 100%!important; flex-grow: 1!important; }
-.pp-default
+.pp-default-2
     {
         top: 0px!important;
         bottom: 20px!important;
@@ -60,6 +65,19 @@
         margin-bottom: 0px!important;
         margin-top: 20px!important;
         
+    }
+
+.pp-default
+    {
+margin-left: 0px!important;
+margin-right: 0px!important;
+min-width: auto!important;
+height: 96vh!important;
+width: 100vw!important;
+position: fixed!important;
+top: 50%!important;
+left: 50%!important;
+transform: translate(-50%,-50%)!important;
     }
 
 @media (max-width: 768px)
@@ -71,6 +89,7 @@ bottom: 0!important;
 padding: 0!important;
 margin: 0!important;
 right: 0!important;
+	height: 100vh!important;
 }
 }
 
@@ -117,14 +136,13 @@ flex-grow: 1!important;
 }
 }
 
-
-/*Active and hover item*/
-
 body
 {
 user-select: none; outline: none !important;
 }
 
+
+/********************* ITEM HOVER *****************/
 .brl-item_card
 {
 transition: 300ms ease all!important;
@@ -135,18 +153,25 @@ transition: 300ms ease all!important;
 opacity: 82%!important;
 }
 
-.brl-item--fancy
+.brl-item--fancy, .brl-item--fancy-2
 {
 transition: 300ms ease all!important;
 }
 .brl-item--fancy:hover 
 {
-transform: scale(1.025)!important;
+transform: scale(1.025);
 }
+
+.brl-item--fancy-2:hover 
+{
+transform: scale(1.025)  translateY(-12px);
+}
+
+
    
 .brl-item_element
 {
-border-radius: 20px!important;
+border-radius: var(--brl-card-radius)!important;
 }
     
 .brl-item_card:after, .brl-item_element:after
@@ -159,10 +184,10 @@ width: 100%!important;
 height: 100%!important;
 position: absolute;
 top: 50%;
-    pointer-events: all!important;
+pointer-events: all!important;
 left: 50%;
 transform: translate(-50%,-50%);
-border-radius: 16px;
+border-radius: var(--brl-card-radius);
 }
 
 .brl-item_element:before, .brl-item_card:before
@@ -178,16 +203,16 @@ border-radius: 16px;
     pointer-events: all!important;
     left: 50%;
     transform: translate(-50%,-50%);
-    border-radius: 16px;
+    border-radius: var(--brl-card-radius);
 }
     
     .brl-item_card:hover:before, .brl-item_card:hover:after, .brl-item:hover .brl-item_element:after, .brl-item:hover .brl-item_element:before {
         opacity: 100%!important;
     }
 
-/* Inputs */
+/*******************INPUT AND BUTTON*******************/
 
-  button, .clickable-element
+  button, .clickable-element, body
     {
        -webkit-backface-visibility: hidden!important;
        white-space: nowrap!important;
@@ -196,26 +221,13 @@ border-radius: 16px;
 
     /* All inputs customization */
 
-    input:not(.cz-checkbox, .cz-switch), textarea, select, .input, .select2-MultiDropdown, button
+    input, textarea, select, .input, .select2-MultiDropdown, button
     {
        transition: 300ms ease all!important;
         
     }
-        
-    /* Input disabled status */
-    
-    input:disabled, textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder, select:disabled, .select2-MultiDropdown:disabled
-    {
-        opacity: 60%!important;
-       background-color: #ededed!important;
-    }
 
-.button:disabled
-{
-   opacity: 60%!important;
-}
-
-input:not(.cz-checkbox, .cz-switch), textarea, select, .select2-MultiDropdown
+input:not(.cz-checkbox, .cz-switch, .select2-search__field), textarea, select, .select2-MultiDropdown, .input
 {
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
@@ -226,13 +238,60 @@ input:not(.cz-checkbox, .cz-switch), textarea, select, .select2-MultiDropdown
    font-size: var(--brl-input-size)!important;
 }
 
-input:focus:not(.cz-checkbox, .cz-switch), textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
-{
-   box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
-} 
-
 textarea
 {
    min-height: 120px;
    line-height: 1.6!important;
+}
+        
+    /* Input disabled status */
+    
+    input:disabled:not(.select2-search__field), textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder, select:disabled, .select2-MultiDropdown:disabled
+    {
+        opacity: 80%!important;
+background-color: #ededed!important;
+    }
+
+.button:disabled
+{
+   opacity: 60%!important;
+}
+
+
+/* Focus state */
+
+input:focus:not(.cz-checkbox, .cz-switch, .select2-search__field), textarea:focus, select:focus, .input.active, button:focus, .select2-MultiDropdown:focus
+{
+   box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
+}
+
+ input:hover, textarea:hover, select:hover, .select2-MultiDropdown:hover
+    {
+        box-shadow: 0 0 0 2px white, 0 0 0 4px black!important;
+    }
+
+/************************ SCROLLBAR ***************************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+height: 8px;
+border-radius: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
