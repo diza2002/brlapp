@@ -226,7 +226,7 @@ input:not(.cz-checkbox, .cz-switch), textarea, select, .select2-MultiDropdown
    font-size: var(--brl-input-size)!important;
 }
 
-input:not(.cz-checkbox, .cz-switch), textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
+input:not(.cz-checkbox, .cz-switch):focus, textarea:focus, select:focus, .selected, .selected .cm-radio, .input.active, button:focus
 {
    box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
 } 
