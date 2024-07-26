@@ -32,6 +32,15 @@
         content: " *"
     }
 
+.DateInput
+{
+	display: flex!important;
+	flex-direction: row!important;
+	gap: 12p;
+	align-items: stretch!important;
+	width: 100%!important;
+}
+
 /* General code */
 .brl-card
 {
@@ -261,7 +270,6 @@ input:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"]), tex
    -webkit-backface-visibility: hidden!important;
    border: var(--brl-input-border-width) solid var(--brl-input-border-color)!important;
    border-radius: var(--brl-input-radius)!important;
-   min-width: 100%;
    font-size: var(--brl-input-size)!important;
 }
 
