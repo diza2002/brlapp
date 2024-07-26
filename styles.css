@@ -41,7 +41,31 @@
 	width: 100%!important;
 }
 
-/* General code */
+.grid
+{
+display: grid!important;
+}
+
+.grid > div
+{
+width: 100%!important;
+min-width: 100%!important;
+}
+
+.grid-cols-1	
+{
+grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2	
+{
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3	
+{
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ITEM/CARD */
 .brl-card
 {
    border-radius: var(--brl-card-radius)!important;
@@ -131,15 +155,20 @@ max-height: 100vh!important;
 overflow-y: auto!important;
 }
 
+:root
+{
+	--brl-table-cell-padding: 8px 10px;
+	--brl-table-cell-gap: 8px;
+	--brl-table-top-bg-color: #ededed;
 .TableCell
 {
-padding: var(--brl-table-padding);
-gap: var(--brl-table-gap);
+padding: var(--brl-table-cell-padding)!important;
+gap: var(--brl-table-cell-gap)!important;
 }
 
 .TableCrossAxis
 {
-background-color: var(--brl-table-top-bg-color);
+background-color: var(--brl-table-top-bg-color)!important;
 }
 
 @media (max-width: 992px)
@@ -248,7 +277,7 @@ border-radius: var(--brl-card-radius);
 
 /*******************INPUT AND BUTTON*******************/
 
-  button, .clickable-element, body
+  button, .clickable-element
     {
        -webkit-backface-visibility: hidden!important;
        white-space: nowrap!important;
@@ -263,7 +292,7 @@ border-radius: var(--brl-card-radius);
         
     }
 
-input:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"]), textarea, select, .select2-MultiDropdown, .input
+input:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea, select, .select2-MultiDropdown, .input
 {
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
@@ -295,7 +324,7 @@ background-color: #ededed!important;
 
 /* Focus state */
 
-input:focus:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"]), textarea:focus, select:focus, .input.active, button:focus, .select2-MultiDropdown:focus
+input:focus:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea:focus, select:focus, .input.active, button:focus, .select2-MultiDropdown:focus
 {
    box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
 }
