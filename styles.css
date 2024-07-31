@@ -286,13 +286,13 @@ border-radius: var(--brl-card-radius);
 
     /* All inputs customization */
 
-    input, textarea, select, .input, .select2-MultiDropdown, button
+    input, textarea, select, .input, .select2-MultiDropdown, button, .searchable_dd_main-container
     {
        transition: 300ms ease all!important;
         
     }
 
-input:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea, select, .select2-MultiDropdown, .input
+input:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea, select, .select2-MultiDropdown, .input, .searchable_dd_main-container
 {
    padding: var(--brl-input-padding)!important;
    line-height: 1!important;
@@ -310,7 +310,7 @@ textarea
         
     /* Input disabled status */
     
-    input:disabled:not(.select2-search__field), textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder, select:disabled, .select2-MultiDropdown:disabled
+    input:disabled:not(.select2-search__field), textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder, select:disabled, .select2-MultiDropdown:disabled, .searchable_dd_main-container:disabled
     {
         opacity: 80%!important;
 background-color: #ededed!important;
@@ -324,12 +324,12 @@ background-color: #ededed!important;
 
 /* Focus state */
 
-input:focus:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea:focus, select:focus, .input.active, button:focus, .select2-MultiDropdown:focus
+input:focus:not(.cz-checkbox, .cz-switch, .select2-search__field, [type="radio"], [type=range]), textarea:focus, select:focus, .input.active, button:focus, .select2-MultiDropdown:focus, .searchable_dd_main-container:focus
 {
    box-shadow: 0px 0px 0px 2px white,0px 0px 0px 4px black!important;
 }
 
- input:hover, textarea:hover, select:hover, .select2-MultiDropdown:hover
+ input:hover, textarea:hover, select:hover, .select2-MultiDropdown:hover, .searchable_dd_main-container:hover
     {
         box-shadow: 0 0 0 2px white, 0 0 0 4px black!important;
     }
