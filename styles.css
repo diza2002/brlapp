@@ -27,7 +27,7 @@
 	--brl-pp-footer-bg: white;
 }
 
-  .mandatory-text:after
+  .mandatory-text div:after
     {
 	    margin-left: 2px;
         content: "*";
