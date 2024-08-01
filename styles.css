@@ -29,7 +29,8 @@
 
   .mandatory-text:after
     {
-        content: " *"
+	    margin-left: 2px;
+        content: "*";
     }
 
 .DateInput
