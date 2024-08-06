@@ -82,7 +82,6 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 {
    white-space: nowrap!important;
    text-overflow: ellipsis!important;
-   text-wrap: nowrap!important;
    overflow: hidden!important;
 }
 .grow-1 { flex-grow: 1!important; }
